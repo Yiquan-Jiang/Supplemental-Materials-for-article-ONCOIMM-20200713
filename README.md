@@ -2,13 +2,21 @@
 Supplemental Materials
 
 Supplemental Table 1 Sample Information
+
 Supplemental Table 2 Ligand-Receptor Pair List and Ligand Receptor Genes
+
 Supplemental Table 3 Different Cell-Cell Interactions Between Pretreatment Responders and Nonresponders
+
 Supplemental Table 4 Relative Differences in Changes from Pretreatment to Posttreatment Status Between Responders and Nonresponders
+
 Supplemental Table 5 Differentially Expressed Genes Between CAFs and Myofibroblasts	
+
 Supplemental Table 6: GSVA between CAFs and Myofibroblasts
+
 Supplemental Table 7 Differentially Expressed Ligands/Receptors Across the 4 Branches of Exhausted CD8 T cells in Responders
+
 Supplemental Table 8 GSVA of the 4 Branches of Exhausted CD8 T cells in Responders
+
 Supplemental Table 9 Differentially Expressed Genes Between Pretreatment- and Posttreatment Status in Cluster 1 Exhausted CD8 T cells in responders
 
 Fig. S1 Specific Comparison of Each Ligand-receptor Interaction in Pretreatment responders with Each Ligand-receptor Interaction in Pretreatment Nonresponders. Notes, a Ratio (pretreatment responders/nonresponders) >1 indicates that a higher interaction intensity existed in responders than in nonresponders (shown in red). A Ratio (pretreatment responders/nonresponders) <1 indicates that a lower interaction intensity exists in responders than in nonresponders (shown in blue).
