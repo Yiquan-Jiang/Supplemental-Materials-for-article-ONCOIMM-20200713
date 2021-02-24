@@ -485,7 +485,7 @@ posttreateffective<-SubsetData(posttreat,ident.use =c("su001","su002","su003","s
   dev.off()    
   
 #TMB Fig 1J
-TMB <- read_csv("C:/bcc_scRNA_counts.txt/TMB.csv")
+TMB <- read_csv("TMB.csv")
 ggplot(TMB) +
   aes(x = Efficacy, y = TMB, fill = Efficacy) +
   geom_boxplot() +
@@ -553,7 +553,8 @@ getCellTypeColor <- function(cell.types){
 
 
 
-#cellphoneDB process demo
+#cellphoneDB process demo 
+##python
 cellphonedb method statistical_analysis \
        --project-name tissue \
        --iterations 1000 \
