@@ -1756,7 +1756,7 @@ ggplot(significant_meansReshapePreEffectiveVsNonEffectiveIntersectAntipd1RnaseqO
 #Wilcoxon rank-sum (Mann-Whitney U) tests demo
 #Fig 2E demo
 data<-read.csv("significant_meansReshapePreEffectiveVsNonEffective.csv",header = T)
-fdrFilter=0.05                                                    #fdrÁÙ½çÖµ
+fdrFilter=0.05                                                    #fdrÃÃ™Â½Ã§Ã–Âµ
 logFCfilter=0.5                                                     
 
 outTab=data.frame()
@@ -1874,8 +1874,8 @@ dev.off()
 
 
 ##predicted model Fig 8 demo
-#"set1roc.csv" and "set2roc.csv" for ¡°Ligand-receptor Pairs Related to Response Before Treatment¡± model
-#"set1prepostcalculated.csv" for ¡°Ligand-receptor Pairs Related to Response on Treatment¡± model
+#"set1roc.csv" and "set2roc.csv" for Â¡Â°Ligand-receptor Pairs Related to Response Before TreatmentÂ¡Â± model
+#"set1prepostcalculated.csv" for Â¡Â°Ligand-receptor Pairs Related to Response on TreatmentÂ¡Â± model
 
 #set1
 finalgenes<-read.csv("final genes.csv",header = T)
@@ -1949,11 +1949,6 @@ write.csv(rt2,"set3 roc.csv")
 
 install.packages("xgboost")
 require(xgboost)
-data(agaricus.train, package='xgboost')
-data(agaricus.test, package='xgboost')
-train <- agaricus.train
-test <- agaricus.test
-MatrixTrain<-as.matrix(train[["data"]])
 
 ##model demo
 model1Label<-read.table(file = "model1_SRP070710_reRun_clinicaldata.txt",sep="\t",header=T,check.names=F)
