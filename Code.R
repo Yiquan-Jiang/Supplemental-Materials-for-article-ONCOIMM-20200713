@@ -1,3 +1,7 @@
+
+R version 3.6.3 (2020-02-29) -- "Holding the Windsock"
+Copyright (C) 2020 The R Foundation for Statistical Computing
+
 install.packages("extrafont")
 install.packages("Cairo")
 install.packages("showtext")
@@ -1915,8 +1919,8 @@ dev.off()
 
 
 ##predicted model Fig 8 demo
-#"set1roc.csv" and "set2roc.csv" for ¡°Ligand-receptor Pairs Related to Response Before Treatment¡± model
-#"set1prepostcalculated.csv" for ¡°Ligand-receptor Pairs Related to Response on Treatment¡± model
+#"set1roc.csv" and "set2roc.csv" for Â¡Â°Ligand-receptor Pairs Related to Response Before TreatmentÂ¡Â± model
+#"set1prepostcalculated.csv" for Â¡Â°Ligand-receptor Pairs Related to Response on TreatmentÂ¡Â± model
 
 #set1
 finalgenes<-read.csv("final genes.csv",header = T)
