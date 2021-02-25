@@ -19,6 +19,8 @@ Install CellPhoneDB V2: Please download and install the CellPhoneDB V2 at https:
 
 The r codes used for data analyses and figure formation are deposited in The_core_R_Script.R
 
+The output data by cellphoneDB and the corresponding reshaped data for analyses in this research are deposited in folders "CellphoneDB output" and "Interaction score files".
+
 # Supplemental Materials
 
 Supplemental Materials list:
