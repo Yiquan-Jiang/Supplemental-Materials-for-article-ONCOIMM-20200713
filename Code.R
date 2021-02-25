@@ -549,8 +549,29 @@ getCellTypeColor <- function(cell.types){
   return(cell.colors)
 }
 
+#cellphoneDB data prepare demo
+DefaultAssay(object = expr) <- "RNA"
+totalbccmatrix<-expr[["RNA"]]@counts
+totalbccmatrix<-as.matrix(totalbccmatrix)
+preeffectivesamplematrix<-apply(preeffectivesamplematrix, 2, function(x) (x/sum(x))*10000)
 
+preeffectivesamplemetadata<-colnames(preeffectivesamplematrix)
+preeffectivesamplemetadata<-as.data.frame(preeffectivesamplemetadata)
+colnames(preeffectivesamplemetadata)[1]<-"cell.id"
+preeffectivesamplemetadata<-dplyr::left_join(preeffectivesamplemetadata,metadata,by="cell.id")
+preeffectivesamplemetadata<-preeffectivesamplemetadata[,c("cell.id","cluster")]
+colnames(preeffectivesamplemetadata)[1]<-"Cell"
+colnames(preeffectivesamplemetadata)[2]<-"cell_type"
+write.table(preeffectivesamplemetadata,file = "preeffectivesamplemetadata.txt",sep = "\t",quote = F,row.names = F)
 
+preeffectivesamplematrixgenelist<-as.data.frame(row.names(preeffectivesamplematrix))
+preeffectivesamplematrix<-cbind(preeffectivesamplematrixgenelist,preeffectivesamplematrix)
+colnames(preeffectivesamplematrix)[1]<-"Gene"
+preeffectivesamplematrix<-dplyr::left_join(ensembl,preeffectivesamplematrix,by="Gene")
+preeffectivesamplematrix<-preeffectivesamplematrix[complete.cases(preeffectivesamplematrix),]
+preeffectivesamplematrix<-preeffectivesamplematrix[,-1]
+colnames(preeffectivesamplematrix)[1]<-"Gene"
+write.table(preeffectivesamplematrix,file = "preeffectivesamplematrix.txt",sep="\t", row.names = F,quote=F)
 
 
 #cellphoneDB process demo 
