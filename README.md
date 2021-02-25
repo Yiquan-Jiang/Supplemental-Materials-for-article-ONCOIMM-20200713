@@ -12,7 +12,7 @@ Please download and install the CellPhoneDB V2 at https://github.com/Teichlab/ce
 
 
 
-# Supplemental-Materials-for-article-ONCOIMM-20200713
+# Supplemental Materials
 The r codes used for data analyses and figure formation are deposited in The_core_R_Script.R
 
 Supplemental Materials list:
