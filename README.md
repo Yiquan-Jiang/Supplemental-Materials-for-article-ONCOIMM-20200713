@@ -1,19 +1,25 @@
-#  Investigating Mechanisms of Response or Resistance to Immune Checkpoint Inhibitors by Analyzing Cell-Cell Communications in Tumors Before and After Programmed Cell Death-1 (PD-1) Targeted Therapy: An Integrative Analysis Using Single-cell RNA and Bulk-RNA Sequencing Data
+#  Research Title: Investigating Mechanisms of Response or Resistance to Immune Checkpoint Inhibitors by Analyzing Cell-Cell Communications in Tumors Before and After Programmed Cell Death-1 (PD-1) Targeted Therapy: An Integrative Analysis Using Single-cell RNA and Bulk-RNA Sequencing Data
+
+Background: 
 
 Resistance to anti-PD1 therapy in cancers is a major stumbling block. To our knowledge, few studies have investigated cell-cell communications in paired before and after anti-programmed cell death-1 (PD1) treated tumors. Study of this type allows us to examine the specific contribution of cell-cell communications in tumor microenvironment to anti-PD1 therapy. Based on single-cell RNA sequencing data obtained from paired before and after anti-PD1 therapy tumors, cell-cell interactions were analyzed. 
 
+Results:
+
 We identified several different cell-cell interactions, like WNT5A-PTPRK, EGFR-AREG, AXL-GAS6 and ACKR3-CXCL12, based on pretreatment data from responders and nonresponders. Furthermore, relative differences in the changes from pretreatment to posttreatment status between responders and nonresponders existed in SELE-PSGL-1, CXCR3-CCL19, CCL4-SLC7A1, CXCL12-CXCR3, EGFR-AREG, THBS1-a3b1 complex, TNF-TNFRSF1A, TNF-FAS and TNFSF10-TNFRSF10D interactions. In trajectory analyses of tumor-specific exhausted CD8 T cells using ligand/receptor genes, we identified a cluster of T cells that presented a distinct pattern of ligand/receptor expression. They highly expressed suppressive genes like HAVCR2 and KLRC1, cytotoxic genes like GZMB and FASLG and the tissue-residence-related gene CCL5. These cells had increased expression of survival-related and tissue-residence-related genes, like heat shock protein genes and the interleukin-7 receptor (IL-7R), CACYBP and IFITM3 genes, after anti-PD1 therapy.
+
+Conclusions:
 
 These results reveal the mechanisms underlying anti-PD1 therapy response and offer abundant clues for potential strategies to improve immunotherapy.
 
 
-# Install CellPhoneDB V2
-Please download and install the CellPhoneDB V2 at https://github.com/Teichlab/cellphonedb.
+# CellphoneDB requirement and R script for this research
 
+Install CellPhoneDB V2: Please download and install the CellPhoneDB V2 at https://github.com/Teichlab/cellphonedb.
 
+The r codes used for data analyses and figure formation are deposited in The_core_R_Script.R
 
 # Supplemental Materials
-The r codes used for data analyses and figure formation are deposited in The_core_R_Script.R
 
 Supplemental Materials list:
 
