@@ -2,7 +2,7 @@
 
 Background: 
 
-Resistance to anti-PD1 therapy in cancers is a major stumbling block. To our knowledge, few studies have investigated cell-cell communications in paired before and after anti-programmed cell death-1 (PD1) treated tumors. Study of this type allows us to examine the specific contribution of cell-cell communications in tumor microenvironment to anti-PD1 therapy. Based on single-cell RNA sequencing data obtained from paired before and after anti-PD1 therapy tumors, cell-cell interactions were analyzed. 
+Resistance to anti-PD-1 therapy in cancers is a major challenge. Searches for strategies to overcome resistance to anti-PD-1 therapy and improvements in the efficacy of immunotherapy are urgently needed. Based on single-cell RNA sequencing data obtained from paired before and after anti-PD1 therapy tumors, cell-cell interactions were analyzed. 
 
 Results:
 
