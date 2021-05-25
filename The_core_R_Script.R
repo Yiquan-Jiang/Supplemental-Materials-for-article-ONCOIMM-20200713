@@ -1971,8 +1971,8 @@ dev.off()
 ####------predicted model development and validation------####
 ####------This section was used for predicted model development and validation and figure 8 formation------####
 ##predicted model Fig 8 demo
-#"set1roc.csv" and "set2roc.csv" for ¡°Ligand-receptor Pairs Related to Response Before Treatment¡± model
-#"set1prepostcalculated.csv" for ¡°Ligand-receptor Pairs Related to Response on Treatment¡± model
+#"set1roc.csv" and "set2roc.csv" for Â¡Â°Ligand-receptor Pairs Related to Response Before TreatmentÂ¡Â± model
+#"set1prepostcalculated.csv" for Â¡Â°Ligand-receptor Pairs Related to Response on TreatmentÂ¡Â± model
 
 #set1
 finalgenes<-read.csv("final genes.csv",header = T)
@@ -2043,83 +2043,6 @@ write.csv(rt2,"set3 roc.csv")
 
 
 
-
-install.packages("xgboost")
-require(xgboost)
-
-
-##model demo
-model1Label<-read.table(file = "model1_SRP070710_reRun_clinicaldata.txt",sep="\t",header=T,check.names=F)
-model1Label<-model1Label[model1Label$Treatment=="PRE",]
-model1Label$efficacy[model1Label$response=="PRCR"]<-"1"
-model1Label$efficacy[model1Label$response=="PD"]<-"0"
-
-model1LR<-read.table(file = "model1LR.txt",sep="\t",header=T,check.names=F)
-model1LR=as.matrix(model1LR)
-rownames(model1LR)=model1LR[,1]
-exp=model1LR[,2:ncol(model1LR)]
-dimnames=list(rownames(exp),colnames(exp))
-data=matrix(as.numeric(as.matrix(exp)),nrow=nrow(exp),dimnames=dimnames)
-model1LR<-data
-model1LR<-model1LR[,colnames(model1LR) %in% model1Label$Sample_ID]
-model1LR<-model1LR[rownames(model1LR) %in% finalgenes$gene,]
-rm(data,exp)
-gc()
-model1LR<-t(model1LR)
-model1LR<-as(as.matrix(model1LR),"dgCMatrix")
-model1ID<-rownames(model1LR)
-model1ID<-as.data.frame(model1ID)
-colnames(model1ID)[1]<-"Sample_ID"
-model1ID<-dplyr::left_join(model1ID,model1Label,by="Sample_ID")
-model1ID$efficacy<-as.double(model1ID$efficacy)
-trainmodel1<-list(model1LR,model1ID$efficacy)
-names(trainmodel1) <- c("data", "label")
-
-
-
-model1vLR<-read.csv(file="set1roc.csv",header = T)
-model1vLR=as.matrix(model1vLR)
-rownames(model1vLR)=model1vLR[,1]
-exp=model1vLR[,2:ncol(model1vLR)]
-dimnames=list(rownames(exp),colnames(exp))
-data=matrix(as.numeric(as.matrix(exp)),nrow=nrow(exp),dimnames=dimnames)
-model1vLR<-data
-model1vLR<-model1vLR[,colnames(model1vLR) %in% model1Label$Sample_ID]
-model1vLR<-model1vLR[rownames(model1vLR) %in% finalgenes$gene,]
-rm(data,exp)
-gc()
-model1vLR<-t(model1vLR)
-model1vLR<-as(as.matrix(model1vLR),"dgCMatrix")
-model1ID<-rownames(model1vLR)
-model1ID<-as.data.frame(model1ID)
-colnames(model1ID)[1]<-"Sample_ID"
-
-testmodel1<-model1vLR
-names(trainmodel1) <- c("data", "label")
-
-library(xgboost)
-
-dtrain = xgb.DMatrix(data=train$data, label=train$label)
-dtest = xgb.DMatrix(data=test$data, label=test$label)
-watchlist = list(train=dtrain, test=dtest)
-
-bst = xgb.train(data=dtrain, max_depth=2, eta=1, nthread=2, nrounds=2, watchlist=watchlist, objective='binary:logistic')
-
-pred = predict(bst, test$data)
-prediction = as.numeric(pred > 0.5)
-print(head(prediction, 5))
-err = mean(as.numeric(prediction != test$label))
-
-rocl<-cbind(model1vLR,pred)
-
-#plot
-
-rocobj3<-roc(rocl$efficacy,rocl$pred)
-auc(rocobj3)
-plot(rocobj3)
-g <- ggroc(rocobj3)
-g + theme_minimal() + ggtitle("ROC curve") + 
-  geom_segment(aes(x = 1, xend = 0, y = 0, yend = 1), color="grey", linetype="dashed")
   
   
   
